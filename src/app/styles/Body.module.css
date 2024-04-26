@@ -94,5 +94,23 @@
 
 .DivCardSave {
     display: flex;
-    
+}
+
+.DivButtonDelete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.DivButtonDelete button {
+    padding: 5px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    background: none;
+    background-color: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
 }
