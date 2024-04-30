@@ -26,7 +26,10 @@ export default function Body() {
                 desc: descricao
             }
         ]));
-        setListCards(JSON.parse(localStorage.getItem("listCards")))
+        setListCards(JSON.parse(localStorage.getItem("listCards")));
+        setCardName("");
+        setUrlImage("");
+        setDescricao("");
     }
 
     const deleteCard = (id) => {
@@ -41,9 +44,9 @@ export default function Body() {
             <div className={styles.DivContainerBody}>
                 <div className={ styles.DivInfoCardBody }>
                     <div>
-                        <input onChange={({target}) => setCardName(target.value)} type="text" placeholder="Nome do card" />
-                        <input onChange={({target}) => setUrlImage(target.value)} type="text" placeholder="Url da imagem" />
-                        <input onChange={({target}) => setDescricao(target.value)} type="text" placeholder="Descrição" />
+                        <input value={cardName} onChange={({target}) => setCardName(target.value)} type="text" placeholder="Nome do card" />
+                        <input value={urlImage} onChange={({target}) => setUrlImage(target.value)} type="text" placeholder="Url da imagem" />
+                        <input value={descricao} onChange={({target}) => setDescricao(target.value)} type="text" placeholder="Descrição" />
                     </div>
                 </div>
                 <div className={ styles.DivCardBody }>
@@ -70,7 +73,7 @@ export default function Body() {
             </div>
             <div className={ styles.DivCardSave }>
                 {
-                    listCards && listCards.map(({ id, name, image, desc }) => (
+                    listCards.length > 0 ? listCards.map(({ id, name, image, desc }) => (
                         <div className={ styles.DivCardBody }>
                             <div className={styles.TitleCard}>
                                 <p>{name}</p>
@@ -87,7 +90,9 @@ export default function Body() {
                                 <button onClick={() => deleteCard(id)} type="button">Excluir</button>
                             </div>
                         </div>
-                    ))
+                    )) : (
+                        <h1 style={{ color: 'white' }}>O seus cards aparecerão aqui ao salva-los.</h1>
+                    )
                 }
             </div>
         </>

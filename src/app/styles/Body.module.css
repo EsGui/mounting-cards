@@ -10,7 +10,9 @@
 .DivInfoCardBody {
     height: 100%;
     border: 1px solid black;
-    width: 50%
+    width: 60%;
+    border-radius: 20px;
+    background-color: rgb(192, 2, 2);
 }
 
 .DivInfoCardBody div {
@@ -23,7 +25,9 @@
 
 .DivInfoCardBody div input {
     margin: 20px;
-    padding: 5px;
+    width: 80%;
+    padding: 20px;
+    font-size: 18px;
 }
 
 .DivCardBody {
@@ -94,6 +98,10 @@
 
 .DivCardSave {
     display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: black;
+    height: 100vh
 }
 
 .DivButtonDelete {
